@@ -1,3 +1,55 @@
+# Przygotowanie alternatywnej wersji index.html z neutralnym stylem i CTA
+html_cta_content = """
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>DomowaAborcja.com – Edukacja i dostęp do wiedzy</title>
+  <meta name="description" content="Strona informacyjna na temat zdrowia reprodukcyjnego i edukacji farmaceutycznej.">
+  <link rel="canonical" href="https://www.domowaaborcja.com/">
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 3em auto;
+      padding: 1em;
+      color: #222;
+    }
+    .cta {
+      margin-top: 2em;
+      display: inline-block;
+      background-color: #00796b;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75em 1.5em;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .cta:hover {
+      background-color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <h1>Strona informacyjna</h1>
+  <p>To niezależna strona edukacyjna poświęcona zdrowiu, bezpieczeństwu i samodzielnemu dostępowi do wiedzy medycznej.</p>
+  <p>Znajdziesz tu poradniki, instrukcje krok po kroku i wsparcie informacyjne.</p>
+  <a class="cta" href="https://www.domowaaborcja.com/">Dowiedz się więcej</a>
+</body>
+</html>
+"""
+
+# Zapisanie pliku
+file_path_cta = Path("/mnt/data/index-neutral-cta.html")
+file_path_cta.write_text(html_cta_content, encoding='utf-8')
+
+file_path_cta.name
+
+Zakończono analizę
+python
+Zawsze pokazuj szczegóły
+
+Kopiuj
 from pathlib import Path
 
 # Tworzymy ponownie alternatywny plik index.html z neutralnym CTA po resecie środowiska
@@ -39,10 +91,3 @@ html_cta_content = """
   <a class="cta" href="https://www.domowaaborcja.com/">Dowiedz się więcej</a>
 </body>
 </html>
-"""
-
-# Zapisujemy plik
-file_path_cta = Path("/mnt/data/index-neutral-cta.html")
-file_path_cta.write_text(html_cta_content, encoding='utf-8')
-
-file_path_cta.name
